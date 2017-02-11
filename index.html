@@ -24,26 +24,20 @@
 
 <div id='map'></div>
 <div id='menu'>
-    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
-    <label for='basic'>basic</label>
-    <input id='streets' type='radio' name='rtoggle' value='streets'>
-    <label for='streets'>streets</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
+    <input id='ciyzdquzw00692rk73iadzphz' type='radio' name='rtoggle' value='tct-basemap' checked='checked'>
+    <label for='tct-basemap'>basemap</label>
+    <input id='ciz10fabd00152spc1oc06kkp' type='radio' name='rtoggle' value='tct-elevation'>
+    <label for='tct-elevation'>elevationmap</label>
+    <input id='ciz0xfbvi000x2rmeb8fa83pw' type='radio' name='rtoggle' value='tct-scoutmap'>
+    <label for='tct-scoutmap'>scoutmap</label>    
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoidGN0IiwiYSI6ImNpZWxhandiNjAwMXN1YW0xc3llcGZnNDQifQ.CRd84tqr9Wl1kxRAGraZyQ';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/basic-v9',
-    zoom: 13,
-    center: [4.899, 52.372]
+    style: 'mapbox://styles/tct/ciyzdquzw00692rk73iadzphz',
+    zoom: 6.4,
+    center: [44.799, 41.472]
 });
 
 var layerList = document.getElementById('menu');
@@ -51,7 +45,8 @@ var inputs = layerList.getElementsByTagName('input');
 
 function switchLayer(layer) {
     var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
+    alert(layerId);
+    map.setStyle('mapbox://styles/tct/' + layerId);
 }
 
 for (var i = 0; i < inputs.length; i++) {
